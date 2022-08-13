@@ -10,7 +10,6 @@
   "author": "",
   "license": "MIT",
   "dependencies": {
-    "ps-list": "7",
-    "puppeteer": "latest"
+    "ps-list": "7"
   }
 }

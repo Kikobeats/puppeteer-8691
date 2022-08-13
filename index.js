@@ -19,6 +19,7 @@ console.log(`https://github.com/puppeteer/puppeteer/issues/8691`)
 console.log()
 ;(async () => {
   const browser = await puppeteer.launch({ headless: false })
+  console.log(`Chrome version: ${await browser.version()}\n`)
 
   const browserPid = browser.process().pid
 
@@ -44,8 +45,11 @@ Close the second context causes the browser be closed too.
 
 The method 'browser.isConnected()' is returning '${native}'`)
 
+    await browser.close()
     process.exit(1)
   } else {
     console.log('The issue has been fixed ✨')
+    await browser.close()
+    process.exit(0)
   }
 })()
